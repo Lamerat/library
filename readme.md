@@ -43,7 +43,8 @@ After successfull install of the required dependencies, You will be able to run 
 # Runs Express with Nodemon
 npm run dev
 ```
-
+### Postman
+Folder _postman_ include JSON for endpoints testing
 ### Server structure
 ```bash
 src
