@@ -43,14 +43,18 @@ try {
   console.log (error)
 }
 
-app.use('/api/book', bookRouter);
-app.use('/api/genre', genreRouter);
-app.use('/api/user', userRouter);
+// app.use('/api/book', bookRouter);
+// app.use('/api/genre', genreRouter);
+// app.use('/api/user', userRouter);
+
 app.use('/api/test', async (req, res) => {
   res.status(200).json('IS OK');
 })
 
 console.log('Test')
-
-elka.listen(5000, () => console.log(`Listening on port ${port}`));
+try {
+  elka.listen(5000, () => console.log(`Listening on port ${port}`));
+} catch (error) {
+  console.log (error)
+}
 // app.listen(port, () => console.log(`Listening on port ${port}`));
