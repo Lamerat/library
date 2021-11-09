@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 
 // const JWT_KEY = dotenv.config().parsed.JWT_KEY;
 const JWT_KEY = 'R4DI4TOR';
+// nothing
 // const TOKEN_LIFE = dotenv.config().parsed.TOKEN_LIFE;
 const TOKEN_LIFE = '24h';
 
