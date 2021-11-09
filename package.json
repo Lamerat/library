@@ -7,15 +7,10 @@
     "start": "node server.js",
     "dev": "nodemon --verbose --signal SIGKILL --delay 1"
   },
-  "engines": {
-    "node": "16.13.0",
-    "npm": "8.1.0"
-  },
   "dependencies": {
     "@types/dotenv": "^8.2.0",
     "@types/jsonwebtoken": "^8.5.5",
     "@types/mongoose": "^5.11.97",
-    "@types/node": "^16.11.7",
     "@types/nodemon": "^1.19.1",
     "@types/npm": "^7.19.0",
     "@types/passport": "^1.0.7",
