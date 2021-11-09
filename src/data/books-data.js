@@ -3,11 +3,15 @@ import {addFields, lookUpQuery} from '../common/query-constants.js';
 
 
 export const getAllBooksQuery = (model) => {
+  try {
   return model.aggregate([
     lookUpQuery,
     addFields,
     {$unwind: '$genre'},
   ]);
+} catch (error) {
+  console.log (error)
+}
 }
 
 

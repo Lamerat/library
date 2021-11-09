@@ -2,7 +2,13 @@ import errors from '../common/errors.js';
 import { allBooks } from '../common/schemas.js';
 
 
-export const getAllBooks = (booksData) => booksData.getAllBooksQuery(allBooks);
+export const getAllBooks = (booksData) => {
+  try {
+    booksData.getAllBooksQuery(allBooks)
+  } catch (error) {
+    
+  }
+};
 
 
 export const getBookById = (booksData) => async (bookId) => {
