@@ -14,6 +14,7 @@ bookRouter.use(authenticator, tokenValidator);
 
 bookRouter.get('/', async (_, res) => {
   try {
+    console.log ('Go to controller')
     const result = await getAllBooks(booksData);
     res.status(200).send(result);
   } catch (e) {

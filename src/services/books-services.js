@@ -4,9 +4,10 @@ import { allBooks } from '../common/schemas.js';
 
 export const getAllBooks = (booksData) => {
   try {
+    console.log ('Getting books')
     booksData.getAllBooksQuery(allBooks)
   } catch (error) {
-    
+
   }
 };
 
