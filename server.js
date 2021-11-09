@@ -37,4 +37,6 @@ app.use('/api/book', bookRouter);
 app.use('/api/genre', genreRouter);
 app.use('/api/user', userRouter);
 
+console.log('Test')
+
 app.listen(port, () => console.log(`Listening on port ${port}`));
