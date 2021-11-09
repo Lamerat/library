@@ -7,6 +7,8 @@ import { genreRouter } from './src/controllers/genres-controller.js';
 import { userRouter } from './src/controllers/users-controller.js';
 import jwtStrategy from './src/authentication/strategy.js';
 
+import http from 'http'
+
 // const constants = dotenv.config().parsed;
 // const db_url = constants.DB_HOST;
 // const username = constants.DB_USER;
@@ -24,6 +26,10 @@ const maxPool = 5
 
 // const port = parseInt(constants.EXPRESS_PORT) || 5000;
 const app = express();
+
+// const http = require('http').Server(app)
+const elka = http.Server(app)
+
 passport.use(jwtStrategy);
 app.use(express.json());
 
@@ -43,4 +49,5 @@ app.use('/api/user', userRouter);
 
 console.log('Test')
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+elka.listen(5000, () => console.log(`Listening on port ${port}`));
+// app.listen(port, () => console.log(`Listening on port ${port}`));
