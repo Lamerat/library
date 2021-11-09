@@ -18,7 +18,7 @@ import http from 'http'
 
 const port = 5000;
 const db_url = 'mongodb+srv://cluster0.7zjjw.mongodb.net/library?retryWrites=true&w=majority'
-const username = 'root1'
+const username = 'root'
 const password = 'k4rbur4tor'
 const maxPool = 5
 
@@ -46,6 +46,9 @@ try {
 app.use('/api/book', bookRouter);
 app.use('/api/genre', genreRouter);
 app.use('/api/user', userRouter);
+app.use('/api/test', async (req, res) => {
+  res.status(200).json('IS OK');
+})
 
 console.log('Test')
 
