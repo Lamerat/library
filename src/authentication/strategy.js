@@ -1,7 +1,9 @@
 import passportJwt from 'passport-jwt';
 import dotenv from 'dotenv';
 
-const JWT_KEY = dotenv.config()?.parsed?.JWT_KEY || process.env.JWT_KEY;
+// const JWT_KEY = dotenv.config()?.parsed?.JWT_KEY || process.env.JWT_KEY;
+const JWT_KEY = 'R4DI4TOR';
+
 
 const options = {
     secretOrKey: JWT_KEY,
