@@ -15,20 +15,12 @@ import http from 'http'
 // const password = constants.DB_PASS;
 // const maxPool = parseInt(constants.DB_LIMIT);
 
-
-// const port = 5000;
 const db_url = 'mongodb+srv://cluster0.7zjjw.mongodb.net/library?retryWrites=true&w=majority'
 const username = 'root'
 const password = 'k4rbur4tor'
 const maxPool = 5
 
-
-
-// const port = parseInt(constants.EXPRESS_PORT) || 5000;
 const app = express();
-
-// const http = require('http').Server(app)
-const elka = http.Server(app)
 
 passport.use(jwtStrategy);
 app.use(express.json());
@@ -43,22 +35,14 @@ try {
   console.log (error)
 }
 
-// app.use('/api/book', bookRouter);
-// app.use('/api/genre', genreRouter);
-// app.use('/api/user', userRouter);
-
-app.use('/api/test', async (req, res) => {
-  res.status(200).json('IS OK');
-})
-
-console.log('Test')
+app.use('/api/book', bookRouter);
+app.use('/api/genre', genreRouter);
+app.use('/api/user', userRouter);
 
 const PORT = process.env.PORT || 3000;
 
 
-try {
-  elka.listen(PORT, () => console.log(`Listening on port ${PORT}`));
-} catch (error) {
-  console.log (error)
-}
-// app.listen(port, () => console.log(`Listening on port ${port}`));
+
+  app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+
+
