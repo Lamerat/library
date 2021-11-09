@@ -4,6 +4,7 @@ const booksSchema = new mongoose.Schema({
   _id: mongoose.Types.ObjectId,
   name: 'string',
   author: 'string',
+  image: { type: String },
   createOn: 'string',
   lastUpdateOn: 'string',
   genre: mongoose.ObjectId,
