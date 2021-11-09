@@ -27,11 +27,15 @@ const app = express();
 passport.use(jwtStrategy);
 app.use(express.json());
 
-mongoose.connect(db_url, {
-  auth: { username, password },
-  authSource: 'admin',
-  maxPoolSize: maxPool,
-});
+try {
+  mongoose.connect(db_url, {
+    auth: { username, password },
+    authSource: 'admin',
+    maxPoolSize: maxPool,
+  });
+} catch (error) {
+  console.log (error)
+}
 
 app.use('/api/book', bookRouter);
 app.use('/api/genre', genreRouter);
