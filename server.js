@@ -16,7 +16,7 @@ import http from 'http'
 // const maxPool = parseInt(constants.DB_LIMIT);
 
 
-const port = 5000;
+// const port = 5000;
 const db_url = 'mongodb+srv://cluster0.7zjjw.mongodb.net/library?retryWrites=true&w=majority'
 const username = 'root'
 const password = 'k4rbur4tor'
@@ -52,8 +52,12 @@ app.use('/api/test', async (req, res) => {
 })
 
 console.log('Test')
+
+const PORT = process.env.PORT || 3000;
+
+
 try {
-  elka.listen(5000, () => console.log(`Listening on port ${port}`));
+  elka.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 } catch (error) {
   console.log (error)
 }
