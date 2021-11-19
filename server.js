@@ -6,6 +6,7 @@ import { bookRouter } from './src/controllers/books-controller.js';
 import { genreRouter } from './src/controllers/genres-controller.js';
 import { userRouter } from './src/controllers/users-controller.js';
 import jwtStrategy from './src/authentication/strategy.js';
+import cors from 'cors'
 
 import http from 'http'
 
@@ -24,6 +25,7 @@ const app = express();
 
 passport.use(jwtStrategy);
 app.use(express.json());
+app.use(cors());
 
 try {
   mongoose.connect(db_url, {
